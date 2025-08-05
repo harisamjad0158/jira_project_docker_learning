@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  node-app:
+    image: your-dockerhub-username/node-app:latest  # or your Artifactory image path
+    container_name: node-todo-app
+    restart: always
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+    # Optional: Mount a volume if needed
+    # volumes:
+    #   - .:/app
+    #   - /app/node_modules
